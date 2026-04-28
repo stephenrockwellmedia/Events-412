@@ -3,12 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events 412 — Pittsburgh DJ, Lighting & Event Entertainment</title>
-  <meta name="description" content="Events 412 is Pittsburgh's trend-setting modern event entertainment company. DJ, custom lighting, photo booth, photography, and cinematography for weddings and events.">
+  <title>Investments — Events 412 Pittsburgh</title>
+  <meta name="description" content="Transparent pricing for DJ, lighting, photo booth, photography, and cinematography packages from Events 412 in Pittsburgh, PA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .invest-nav {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+    }
+    .invest-nav a {
+      padding: .55rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .invest-nav a:hover {
+      border-color: var(--neon-1);
+      color: var(--neon-1);
+    }
+    .invest-section { margin-bottom: 5rem; scroll-margin-top: 100px; }
+    .invest-section h2 {
+      text-align: center;
+      margin-bottom: .5rem;
+    }
+    .invest-section .section-sub {
+      text-align: center;
+      color: var(--text-dim);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .pkg-label {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--neon-1);
+      margin-bottom: .35rem;
+      display: block;
+    }
+    .price-dual {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: .5rem 0 1.25rem;
+    }
+    .price-dual span {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .3rem .75rem;
+      font-size: .85rem;
+      color: var(--text-dim);
+    }
+    .price-dual span strong {
+      color: var(--text);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: .05em;
+    }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .addon-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .addon-item span { color: var(--text-dim); font-size: .95rem; }
+    .addon-item strong {
+      color: var(--neon-1);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+    .photo-booth-block { margin-bottom: 3rem; }
+    .photo-booth-block h3 {
+      font-size: 1.6rem;
+      margin-bottom: .25rem;
+      color: var(--text);
+    }
+    .photo-booth-block p { margin-bottom: 1.5rem; }
+  </style>
 </head>
 <body>
 
@@ -28,7 +122,7 @@
           <li><a href="services/cinematography.html">Cinematography</a></li>
         </ul>
       </li>
-      <li><a href="investments.html">Investments</a></li>
+      <li><a href="investments.html" class="active">Investments</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -38,114 +132,276 @@
 
 <main>
 
-  <section class="hero">
+  <section class="page-hero">
     <div class="container">
-      <span class="eyebrow">Pittsburgh · Est. 412</span>
-      <h1>Where Your Night<br><span class="gradient-text">Comes Alive.</span></h1>
-      <p class="lede">Trend-setting DJ, lighting, and visual entertainment for weddings and events that refuse to be cookie-cutter.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Book Your Date</a>
-        <a href="services/" class="btn btn-ghost">Explore Services</a>
-      </div>
+      <span class="eyebrow">Transparent Pricing</span>
+      <h1>Investments</h1>
+      <p>Every package is a starting point — we'll customize it to fit your event perfectly. All prices include setup, breakdown, and our full commitment to making your night unforgettable.</p>
     </div>
   </section>
 
-  <section>
+  <section style="padding-top:0;">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What We Do</span>
-        <h2>A full production, under one roof.</h2>
-        <p>From the first beat drop to the final farewell sparkler, we bring every element of your night together with one trusted team.</p>
+
+      <nav class="invest-nav" aria-label="Jump to section">
+        <a href="#dj">DJ &amp; Entertainment</a>
+        <a href="#photography">Photography</a>
+        <a href="#cinematography">Cinematography</a>
+        <a href="#photo-booth">Photo Booth</a>
+        <a href="#addons">Add-Ons</a>
+      </nav>
+
+      <!-- DJ ENTERTAINMENT -->
+      <div class="invest-section" id="dj">
+        <span class="eyebrow" style="display:block;text-align:center;">DJ &amp; Entertainment</span>
+        <h2>Make Your Dance Floor Legendary</h2>
+        <p class="section-sub">All DJ packages include our custom stylish TV DJ booth, club DJ, MC services, and professional sound.</p>
+        <div class="price-grid">
+
+          <div class="price-card">
+            <h3>Iron City</h3>
+            <div class="price-dual">
+              <span><strong>$1,995</strong> Ceremony &amp; Reception</span>
+              <span><strong>$1,595</strong> Reception Only</span>
+            </div>
+            <ul>
+              <li>1 DJ / Emcee</li>
+              <li>Up to 5 hours of music</li>
+              <li>Phone app for planning</li>
+              <li>Professional sound system</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="badge">Most Popular</div>
+            <h3>Steel City</h3>
+            <div class="price-dual">
+              <span><strong>$2,995</strong> Ceremony &amp; Reception</span>
+              <span><strong>$2,495</strong> Reception Only</span>
+            </div>
+            <ul>
+              <li>Custom Stylish TV DJ Booth</li>
+              <li>Club DJ &amp; MC</li>
+              <li>Custom monogram</li>
+              <li>Room &amp; dance floor lighting</li>
+              <li>Cocktail speaker</li>
+              <li>Phone app for planning</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
+          <div class="price-card">
+            <h3>The Burgh</h3>
+            <div class="price-dual">
+              <span><strong>$4,995</strong> Ceremony &amp; Reception</span>
+              <span><strong>$4,595</strong> Reception Only</span>
+            </div>
+            <ul>
+              <li>Custom Stylish TV DJ Booth</li>
+              <li>Club DJ &amp; MC</li>
+              <li>Custom monogram</li>
+              <li>Room &amp; dance floor lighting</li>
+              <li>Photo booth rental (4 hrs)</li>
+              <li>Cocktail speaker</li>
+              <li>Dancing on Cloud effect</li>
+              <li>Sparks for entrance &amp; first dance</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
+        </div>
       </div>
 
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="icon">♪</div>
-          <h3>DJ &amp; MC</h3>
-          <p>High-energy mixes, seamless transitions, and an MC who reads the room — not a script.</p>
-          <a class="more" href="services/weddings.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">✦</div>
-          <h3>Lighting Effects</h3>
-          <p>Custom uplighting, intelligent moving heads, and dance-floor lighting that transforms any venue.</p>
-          <a class="more" href="services/lighting.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">◉</div>
-          <h3>Photo Booth</h3>
-          <p>Open-air booths with custom backdrops, instant prints, and digital sharing your guests will love.</p>
-          <a class="more" href="services/photo-booth.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">▣</div>
-          <h3>Photography</h3>
-          <p>Storytelling shots that capture the moments — and the in-between moments — that matter most.</p>
-          <a class="more" href="services/photography.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">▶</div>
-          <h3>Cinematography</h3>
-          <p>Cinematic highlight films and full-event videos that play back like the night did.</p>
-          <a class="more" href="services/cinematography.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">☁</div>
-          <h3>Dancing on the Cloud</h3>
-          <p>Our signature low-lying fog effect for unforgettable first-dance and grand-entrance moments.</p>
-          <a class="more" href="services/lighting.html">Learn more →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- PHOTOGRAPHY -->
+      <div class="invest-section" id="photography">
+        <span class="eyebrow" style="display:block;text-align:center;">Photography</span>
+        <h2>Every Moment, Beautifully Captured</h2>
+        <p class="section-sub">8 hours of coverage with a photographer who tells your story — not just takes your picture.</p>
+        <div class="price-grid" style="grid-template-columns: repeat(2,1fr);">
 
-  <section class="section-narrow">
-    <div class="container">
-      <div class="feature-row">
-        <div>
-          <span class="eyebrow">Why Events 412</span>
-          <h2>Modern. Custom. <span class="gradient-text">Yours.</span></h2>
-          <p>We don't do cookie-cutter. Every package starts with a conversation about <em>your</em> vision — the music you love, the moments that matter, and the energy you want your guests to remember.</p>
-          <p>Then we build the night around it. One team, one timeline, zero stress.</p>
-          <a href="contact.html" class="btn btn-primary">Start Planning</a>
-        </div>
-        <div class="feature-img">YOUR&nbsp;VISION</div>
-      </div>
-    </div>
-  </section>
+          <div class="price-card">
+            <h3>Frick Package</h3>
+            <div class="price-dual">
+              <span><strong>$2,500</strong></span>
+            </div>
+            <ul>
+              <li>8 hours wedding coverage</li>
+              <li>1 photographer</li>
+              <li>300+ edited images</li>
+              <li>Unlimited locations</li>
+              <li>USB with high-resolution files</li>
+              <li>Digital printing release</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">From Our Couples</span>
-        <h2>Real reviews, real nights.</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Events 412 absolutely made our wedding. The dance floor was packed all night and the uplighting transformed our venue."</blockquote>
-          <cite>— Sarah &amp; Mike</cite>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Professional, fun, and so easy to work with. They captured exactly the vibe we wanted from start to finish."</blockquote>
-          <cite>— Jenna &amp; Chris</cite>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"The cloud dance was magical and the photo booth was a hit. Worth every penny — book them now."</blockquote>
-          <cite>— Ashley &amp; Tom</cite>
+          <div class="price-card featured">
+            <div class="badge">Best Value</div>
+            <h3>Schenley Package</h3>
+            <div class="price-dual">
+              <span><strong>$3,500</strong></span>
+            </div>
+            <ul>
+              <li>8 hours wedding coverage</li>
+              <li>2nd photographer included</li>
+              <li>800+ edited images</li>
+              <li>Unlimited locations</li>
+              <li>USB with high-resolution files</li>
+              <li>Digital printing release</li>
+              <li>Customized photo book</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
         </div>
       </div>
-      <p style="text-align:center; margin-top:2rem;"><a href="reviews.html" class="btn btn-ghost">Read All Reviews</a></p>
+
+      <!-- CINEMATOGRAPHY -->
+      <div class="invest-section" id="cinematography">
+        <span class="eyebrow" style="display:block;text-align:center;">Cinematography</span>
+        <h2>Your Night, Cinematic &amp; Forever</h2>
+        <p class="section-sub">Cinematic highlight films and full ceremony coverage that bring you right back to the moment.</p>
+        <div class="price-grid" style="grid-template-columns: repeat(2,1fr);">
+
+          <div class="price-card">
+            <h3>Carnegie Package</h3>
+            <div class="price-dual">
+              <span><strong>$2,500</strong></span>
+            </div>
+            <ul>
+              <li>8 hours wedding coverage</li>
+              <li>1 cinematographer</li>
+              <li>7-minute edited highlight film</li>
+              <li>Preparation coverage</li>
+              <li>First look &amp; ceremony highlights</li>
+              <li>Reception event coverage</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="badge">Best Value</div>
+            <h3>Mellon Package</h3>
+            <div class="price-dual">
+              <span><strong>$3,500</strong></span>
+            </div>
+            <ul>
+              <li>All day wedding coverage</li>
+              <li>2 cinematographers</li>
+              <li>Drone coverage included</li>
+              <li>4K cameras &amp; high-quality audio</li>
+              <li>7–10 minute highlight film</li>
+              <li>Full ceremony video</li>
+              <li>Reception highlight video</li>
+              <li>Raw footage included</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Package</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PHOTO BOOTH -->
+      <div class="invest-section" id="photo-booth">
+        <span class="eyebrow" style="display:block;text-align:center;">Photo Booth</span>
+        <h2>The Party Favor Nobody Forgets</h2>
+        <p class="section-sub">Every package includes attendant, setup &amp; teardown, unlimited photos, custom logo strip, flash drive, and prop station.</p>
+
+        <div class="photo-booth-block">
+          <h3 class="gradient-text">Mirrored Visions Booth</h3>
+          <p>Our premium mirror photo booth — sleek, interactive, and show-stopping.</p>
+          <div class="price-grid" style="grid-template-columns: repeat(2,1fr);">
+            <div class="price-card">
+              <h3>PNC Package</h3>
+              <div class="price-dual"><span><strong>$900</strong> · 3 Hours</span></div>
+              <ul>
+                <li>Mirror photo booth</li>
+                <li>Attendant on-site</li>
+                <li>Unlimited photos</li>
+                <li>Custom logo strip</li>
+                <li>Flash drive of all images</li>
+                <li>Prop station</li>
+              </ul>
+              <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+            </div>
+            <div class="price-card featured">
+              <div class="badge">Best Value</div>
+              <h3>Heinz Package</h3>
+              <div class="price-dual"><span><strong>$1,250</strong> · 5 Hours</span></div>
+              <ul>
+                <li>Mirror photo booth</li>
+                <li>Attendant on-site</li>
+                <li>Unlimited photos</li>
+                <li>Custom logo strip</li>
+                <li>Flash drive of all images</li>
+                <li>Prop station</li>
+                <li>Memory book included</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Package</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-booth-block">
+          <h3>Standard Photo Booth</h3>
+          <p>Classic open-air booth — timeless, fun, and always a crowd favorite.</p>
+          <div class="price-grid" style="grid-template-columns: repeat(2,1fr);">
+            <div class="price-card">
+              <h3>Roberto Clemente</h3>
+              <div class="price-dual"><span><strong>$650</strong> · 3 Hours</span></div>
+              <ul>
+                <li>Standard open-air booth</li>
+                <li>Attendant on-site</li>
+                <li>Unlimited photos</li>
+                <li>Custom logo strip</li>
+                <li>Flash drive of all images</li>
+                <li>Prop station</li>
+              </ul>
+              <a href="contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book This Package</a>
+            </div>
+            <div class="price-card featured">
+              <div class="badge">Best Value</div>
+              <h3>Andy Warhol</h3>
+              <div class="price-dual"><span><strong>$950</strong> · 5 Hours</span></div>
+              <ul>
+                <li>Standard open-air booth</li>
+                <li>Attendant on-site</li>
+                <li>Unlimited photos</li>
+                <li>Custom logo strip</li>
+                <li>Flash drive of all images</li>
+                <li>Prop station</li>
+                <li>Memory book included</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Package</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD-ONS -->
+      <div class="invest-section" id="addons">
+        <span class="eyebrow" style="display:block;text-align:center;">Enhancements</span>
+        <h2>Build Your Perfect Night</h2>
+        <p class="section-sub">Mix and match any of these add-ons with your package to customize your event.</p>
+        <div class="addons-grid">
+          <div class="addon-item"><span>2nd Photographer</span><strong>+$1,000</strong></div>
+          <div class="addon-item"><span>2nd Videographer</span><strong>+$1,000</strong></div>
+          <div class="addon-item"><span>Raw Footage</span><strong>+$500</strong></div>
+          <div class="addon-item"><span>Additional Hour</span><strong>+$300</strong></div>
+          <div class="addon-item"><span>Drone Coverage</span><strong>+$250</strong></div>
+          <div class="addon-item"><span>Custom Photo Book</span><strong>+$250</strong></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section class="cta-strip">
     <div class="container">
-      <h2>Ready to make it unforgettable?</h2>
-      <p>Tell us about your event and we'll put together a custom proposal.</p>
-      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <h2>Not sure which package is right for you?</h2>
+      <p>Tell us about your event and we'll build a custom proposal at no obligation.</p>
+      <a href="contact.html" class="btn btn-primary">Get a Custom Quote</a>
     </div>
   </section>
 
@@ -158,9 +414,9 @@
         <a href="index.html" class="brand"><img src="images/logo.png" alt="Events 412" style="height:64px;width:auto;display:block;"></a>
         <p>Pittsburgh's trend-setting modern event entertainment company.</p>
         <div class="socials">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+          <a href="https://www.facebook.com/PVUEventGroup" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.instagram.com/events412pgh" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.youtube.com/channel/UC8sdWgK4lPaB-DUI5h2FUVg" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
         </div>
       </div>
       <div>
