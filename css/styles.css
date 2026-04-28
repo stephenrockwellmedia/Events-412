@@ -249,6 +249,16 @@ section { padding: 5rem 0; }
     radial-gradient(800px 500px at 50% 90%, rgba(184,134,11,.08), transparent 70%);
   z-index: -1;
 }
+.hero-splash {
+  padding: 10rem 0 9rem;
+  background-image:
+    linear-gradient(rgba(7,6,10,.65), rgba(7,6,10,.85)),
+    url('https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/_DSC4124.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-splash::before { display: none; }
 .hero h1 { margin-bottom: 1rem; }
 .hero p.lede {
   font-size: 1.2rem;
