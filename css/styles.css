@@ -349,7 +349,7 @@ section { padding: 5rem 0; }
 
 /* Pricing */
 .price-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 900px) { .price-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .price-grid { grid-template-columns: 1fr !important; } }
 
 .price-card {
   background: var(--bg-card);
@@ -597,4 +597,45 @@ form textarea { min-height: 140px; resize: vertical; }
     padding: 0 0 0 1rem;
     min-width: 0;
   }
+}
+
+/* ============================================================
+   Mobile refinements
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .container { padding: 0 1rem; }
+  section { padding: 3.25rem 0; }
+  .section-narrow { padding: 2.5rem 0; }
+  .section-head { margin-bottom: 2rem; }
+
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero-splash { padding: 5rem 0 4.5rem; }
+  .hero p.lede { font-size: 1.05rem; margin-bottom: 1.5rem; }
+  .page-hero { padding: 3rem 0 2rem; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; gap: .75rem; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+
+  .btn { padding: .85rem 1.25rem; min-height: 44px; }
+
+  .grid { gap: 1rem; }
+  .card { padding: 1.5rem; }
+
+  .feature-row { gap: 1.5rem; margin: 2.5rem 0; }
+  .feature-img { font-size: 2.4rem; aspect-ratio: 16/10; }
+
+  .price-card { padding: 1.75rem 1.25rem; }
+
+  .site-header .nav { padding: .75rem 0; }
+  .brand img { height: 48px !important; }
+
+  .footer-grid { gap: 2rem; }
+  .site-footer { padding: 2.5rem 0 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .photo-grid { columns: 2 140px !important; column-gap: .5rem !important; }
+  .photo-item { margin-bottom: .5rem !important; }
+  .video-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
 }
