@@ -108,7 +108,7 @@
 
       <div class="video-featured">
         <video controls preload="metadata">
-          <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Antonelle%20and%20Zack.mp4" type="video/mp4">
+          <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Antonelle%20and%20Zack.mp4#t=3" type="video/mp4">
           Your browser does not support video playback.
         </video>
         <div class="video-featured-label">
@@ -120,7 +120,7 @@
       <div class="video-grid">
         <div class="video-card">
           <video controls preload="metadata">
-            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Larissa%20and%20Jake.mp4" type="video/mp4">
+            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Larissa%20and%20Jake.mp4#t=3" type="video/mp4">
           </video>
           <div class="video-card-body">
             <h3>Larissa &amp; Jake</h3>
@@ -129,7 +129,7 @@
         </div>
         <div class="video-card">
           <video controls preload="metadata">
-            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Mariah%20%26%20Troy.mp4" type="video/mp4">
+            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Mariah%20%26%20Troy.mp4#t=3" type="video/mp4">
           </video>
           <div class="video-card-body">
             <h3>Mariah &amp; Troy</h3>
@@ -138,7 +138,7 @@
         </div>
         <div class="video-card">
           <video controls preload="metadata">
-            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Sarah%20%26%20Dustin.mp4" type="video/mp4">
+            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Sarah%20%26%20Dustin.mp4#t=3" type="video/mp4">
           </video>
           <div class="video-card-body">
             <h3>Sarah &amp; Dustin</h3>
@@ -147,7 +147,7 @@
         </div>
         <div class="video-card">
           <video controls preload="metadata">
-            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Sean%20and%20Lauren.mp4" type="video/mp4">
+            <source src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Cinematography/Sean%20and%20Lauren.mp4#t=3" type="video/mp4">
           </video>
           <div class="video-card-body">
             <h3>Sean &amp; Lauren</h3>
@@ -244,5 +244,12 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script>
+  document.querySelectorAll('video').forEach(v => {
+    v.addEventListener('loadedmetadata', () => {
+      try { v.currentTime = Math.min(3, (v.duration || 3) - 0.1); } catch(e) {}
+    }, { once: true });
+  });
+</script>
 </body>
 </html>
