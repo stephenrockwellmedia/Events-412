@@ -617,6 +617,44 @@ form textarea { min-height: 140px; resize: vertical; }
     linear-gradient(rgba(7,6,10,.60), rgba(7,6,10,.75)),
     var(--cta-img) center/cover no-repeat;
 }
+.jump-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none; color: var(--text);
+  margin-bottom: 1.5rem;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  position: relative; overflow: hidden;
+}
+.jump-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--grad); opacity: .08; pointer-events: none;
+}
+.jump-banner:hover {
+  border-color: var(--neon-2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,175,55,.15);
+}
+.jump-banner-text { display: flex; flex-direction: column; gap: .15rem; }
+.jump-banner-text .eyebrow { margin: 0; }
+.jump-banner-text strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem; letter-spacing: .03em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.jump-banner-cta {
+  font-weight: 600; font-size: .95rem;
+  padding: .65rem 1.2rem;
+  border-radius: 999px;
+  background: var(--grad); color: #0b0a10;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .jump-banner { flex-direction: column; align-items: flex-start; padding: 1rem 1.1rem; }
+  .jump-banner-cta { width: 100%; text-align: center; }
+}
 
 /* ============================================================
    Footer
