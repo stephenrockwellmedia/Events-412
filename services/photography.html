@@ -3,49 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events 412 — Pittsburgh DJ, Lighting & Event Entertainment</title>
-  <meta name="description" content="Events 412 is Pittsburgh's trend-setting modern event entertainment company. DJ, custom lighting, photo booth, photography, and cinematography for weddings and events.">
+  <title>Photography — Events 412 Pittsburgh</title>
+  <meta name="description" content="Pittsburgh wedding and event photography by Events 412. Storytelling images that bring every moment back to life.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .photo-grid {
+      columns: 3 280px;
+      column-gap: 1rem;
+    }
+    .photo-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .photo-item img {
+      width: 100%;
+      display: block;
+      transition: transform .35s ease;
+    }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.35);
+      opacity: 0;
+      transition: opacity .25s ease;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .photo-item:hover .overlay { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      z-index: 999;
+      place-items: center;
+    }
+    .lightbox.open { display: grid; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+  </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container nav">
-    <a href="index.html" class="brand"><img src="images/logo.png" alt="Events 412" style="height:64px;width:auto;display:block;"></a>
+    <a href="../index.html" class="brand"><img src="../images/logo.png" alt="Events 412" style="height:64px;width:auto;display:block;"></a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li class="has-dropdown">
-        <a href="services/">Services ▾</a>
+        <a href="./">Services ▾</a>
         <ul class="dropdown">
-          <li><a href="services/weddings.html">Weddings</a></li>
-          <li><a href="services/lighting.html">Lighting Effects</a></li>
-          <li><a href="services/photo-booth.html">Photo Booth</a></li>
-          <li><a href="services/photography.html">Photography</a></li>
-          <li><a href="services/cinematography.html">Cinematography</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="lighting.html">Lighting Effects</a></li>
+          <li><a href="photo-booth.html">Photo Booth</a></li>
+          <li><a href="photography.html">Photography</a></li>
+          <li><a href="cinematography.html">Cinematography</a></li>
         </ul>
       </li>
-      <li><a href="investments.html">Investments</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../investments.html">Investments</a></li>
+      <li><a href="../reviews.html">Reviews</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>
   </div>
 </header>
 
 <main>
 
-  <section class="hero">
+  <section class="page-hero">
     <div class="container">
-      <span class="eyebrow">Pittsburgh · Est. 412</span>
-      <h1>Where Your Night<br><span class="gradient-text">Comes Alive.</span></h1>
-      <p class="lede">Trend-setting DJ, lighting, and visual entertainment for weddings and events that refuse to be cookie-cutter.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Book Your Date</a>
-        <a href="services/" class="btn btn-ghost">Explore Services</a>
+      <span class="eyebrow">Photography</span>
+      <h1>Every Moment,<br><span class="gradient-text">Beautifully Captured.</span></h1>
+      <p>We don't just take pictures — we tell your story. From quiet in-between moments to the ones that made the whole room stop.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="photo-grid" id="photoGrid">
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0229-2.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0236.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0454.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0509.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0578.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A0632.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A1470.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A1605.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A1718.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A1787.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A1857.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A2393.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A2527.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A3213.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A5213.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A9027.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/6Z6A9602.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC04894.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05072.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05195.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05236.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05263.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05315.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05324.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05378.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05394.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC05464.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC06424.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC06460.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC06487.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC06776.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/DSC07917.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20003-7401221.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20003-7401260.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20003-7401439.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20003-7401505.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20004--38.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20004-7402118.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20004-7402159.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20007-00243.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob%20007-00492.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob-7409566.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/Frankie%20%26%20Jacob-7409852.jpg" alt="Frankie &amp; Jacob wedding" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/IMG_5901.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/JVA08189.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209--3.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7400218.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7400656.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7400781.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7400958.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7400967.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7401736.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7402223%202.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/June%209-7409439.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/May%2013-7405187%20copy.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/May%2013-7405324-2.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/May%2013-7405481.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/May%2013-7406063.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/May%2013-7406219.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/_DSC3936.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
+        <div class="photo-item" onclick="openLightbox(this)"><img src="https://pub-5b7418a838064757932b3799e076431d.r2.dev/Photography%20Photos/_DSC4124.jpg" alt="Wedding photo" loading="lazy"><div class="overlay">⤢</div></div>
       </div>
     </div>
   </section>
@@ -53,109 +178,62 @@
   <section>
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">What We Do</span>
-        <h2>A full production, under one roof.</h2>
-        <p>From the first beat drop to the final farewell sparkler, we bring every element of your night together with one trusted team.</p>
+        <span class="eyebrow">Our Packages</span>
+        <h2>Find your perfect fit.</h2>
       </div>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="icon">♪</div>
-          <h3>DJ &amp; MC</h3>
-          <p>High-energy mixes, seamless transitions, and an MC who reads the room — not a script.</p>
-          <a class="more" href="services/weddings.html">Learn more →</a>
+      <div class="price-grid" style="grid-template-columns: repeat(2,1fr); max-width:800px; margin:0 auto;">
+        <div class="price-card">
+          <h3>Frick Package</h3>
+          <div class="price" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:.5rem 0 1rem;">$2,500</div>
+          <ul>
+            <li>8 hours wedding coverage</li>
+            <li>1 photographer</li>
+            <li>300+ edited images</li>
+            <li>Unlimited locations</li>
+            <li>USB high-resolution files</li>
+            <li>Digital printing release</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-ghost" style="width:100%;text-align:center;">Book Now</a>
         </div>
-        <div class="card">
-          <div class="icon">✦</div>
-          <h3>Lighting Effects</h3>
-          <p>Custom uplighting, intelligent moving heads, and dance-floor lighting that transforms any venue.</p>
-          <a class="more" href="services/lighting.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">◉</div>
-          <h3>Photo Booth</h3>
-          <p>Open-air booths with custom backdrops, instant prints, and digital sharing your guests will love.</p>
-          <a class="more" href="services/photo-booth.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">▣</div>
-          <h3>Photography</h3>
-          <p>Storytelling shots that capture the moments — and the in-between moments — that matter most.</p>
-          <a class="more" href="services/photography.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">▶</div>
-          <h3>Cinematography</h3>
-          <p>Cinematic highlight films and full-event videos that play back like the night did.</p>
-          <a class="more" href="services/cinematography.html">Learn more →</a>
-        </div>
-        <div class="card">
-          <div class="icon">☁</div>
-          <h3>Dancing on the Cloud</h3>
-          <p>Our signature low-lying fog effect for unforgettable first-dance and grand-entrance moments.</p>
-          <a class="more" href="services/lighting.html">Learn more →</a>
+        <div class="price-card featured">
+          <div class="badge">Best Value</div>
+          <h3>Schenley Package</h3>
+          <div class="price" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:.5rem 0 1rem;">$3,500</div>
+          <ul>
+            <li>8 hours wedding coverage</li>
+            <li>2nd photographer included</li>
+            <li>800+ edited images</li>
+            <li>Unlimited locations</li>
+            <li>USB high-resolution files</li>
+            <li>Digital printing release</li>
+            <li>Customized photo book</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section-narrow">
-    <div class="container">
-      <div class="feature-row">
-        <div>
-          <span class="eyebrow">Why Events 412</span>
-          <h2>Modern. Custom. <span class="gradient-text">Yours.</span></h2>
-          <p>We don't do cookie-cutter. Every package starts with a conversation about <em>your</em> vision — the music you love, the moments that matter, and the energy you want your guests to remember.</p>
-          <p>Then we build the night around it. One team, one timeline, zero stress.</p>
-          <a href="contact.html" class="btn btn-primary">Start Planning</a>
-        </div>
-        <div class="feature-img">YOUR&nbsp;VISION</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">From Our Couples</span>
-        <h2>Real reviews, real nights.</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Events 412 absolutely made our wedding. The dance floor was packed all night and the uplighting transformed our venue."</blockquote>
-          <cite>— Sarah &amp; Mike</cite>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"Professional, fun, and so easy to work with. They captured exactly the vibe we wanted from start to finish."</blockquote>
-          <cite>— Jenna &amp; Chris</cite>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>"The cloud dance was magical and the photo booth was a hit. Worth every penny — book them now."</blockquote>
-          <cite>— Ashley &amp; Tom</cite>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:2rem;"><a href="reviews.html" class="btn btn-ghost">Read All Reviews</a></p>
     </div>
   </section>
 
   <section class="cta-strip">
     <div class="container">
-      <h2>Ready to make it unforgettable?</h2>
-      <p>Tell us about your event and we'll put together a custom proposal.</p>
-      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <h2>Ready to have your story told?</h2>
+      <p>Reach out and let's talk about your event.</p>
+      <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
     </div>
   </section>
 
 </main>
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand"><img src="images/logo.png" alt="Events 412" style="height:64px;width:auto;display:block;"></a>
+        <a href="../index.html" class="brand"><img src="../images/logo.png" alt="Events 412" style="height:64px;width:auto;display:block;"></a>
         <p>Pittsburgh's trend-setting modern event entertainment company.</p>
         <div class="socials">
           <a href="https://www.facebook.com/PVUEventGroup" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
@@ -166,11 +244,11 @@
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="services/">Services</a></li>
-          <li><a href="investments.html">Investments</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="./">Services</a></li>
+          <li><a href="../investments.html">Investments</a></li>
+          <li><a href="../reviews.html">Reviews</a></li>
+          <li><a href="../gallery.html">Gallery</a></li>
+          <li><a href="../contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -186,6 +264,20 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  function openLightbox(el) {
+    document.getElementById('lightboxImg').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (!e || e.target !== document.getElementById('lightboxImg')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 </body>
 </html>
