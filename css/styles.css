@@ -3,15 +3,15 @@
    ============================================================ */
 
 :root {
-  --bg:        #07070b;
-  --bg-soft:   #0e0e15;
-  --bg-card:   #14141d;
-  --border:    #25253a;
-  --text:      #f4f4f8;
-  --text-dim:  #a4a4b8;
-  --neon-1:    #ff2bd6;   /* magenta */
-  --neon-2:    #00e7ff;   /* cyan    */
-  --neon-3:    #b14bff;   /* purple  */
+  --bg:        #07060a;
+  --bg-soft:   #0e0c09;
+  --bg-card:   #141109;
+  --border:    #2a2218;
+  --text:      #f4f0e8;
+  --text-dim:  #a89e88;
+  --neon-1:    #d4af37;   /* gold        */
+  --neon-2:    #c9a227;   /* deep gold   */
+  --neon-3:    #b8860b;   /* dark gold   */
   --max:       1200px;
   --radius:    14px;
   --shadow:    0 10px 40px rgba(0,0,0,.55);
@@ -94,13 +94,10 @@ p  { margin: 0 0 1em; color: var(--text-dim); }
 }
 
 .brand {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  letter-spacing: .12em;
-  color: var(--text);
+  display: flex;
+  align-items: center;
 }
-.brand span { color: var(--neon-1); }
-.brand:hover { color: var(--text); }
+.brand:hover { opacity: .85; }
 
 .nav-links {
   display: flex;
