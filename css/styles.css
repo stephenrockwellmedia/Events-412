@@ -314,7 +314,7 @@ section { padding: 5rem 0; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(7,6,10,.78), rgba(7,6,10,.88)),
+    linear-gradient(rgba(7,6,10,.50), rgba(7,6,10,.70)),
     var(--card-img);
   background-size: cover;
   background-position: center;
