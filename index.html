@@ -174,19 +174,18 @@
             <input id="cf-date" type="date" name="Event Date">
           </div>
         </div>
-        <div>
-          <label for="cf-service">Services Interested In</label>
-          <select id="cf-service" name="Services">
-            <option value="">Choose one…</option>
-            <option>DJ &amp; MC</option>
-            <option>Lighting Effects</option>
-            <option>Photo Booth</option>
-            <option>Photography</option>
-            <option>Cinematography</option>
-            <option>Full Package</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
+        <fieldset class="checkbox-group">
+          <legend>Services Interested In</legend>
+          <div class="checkbox-grid">
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="DJ &amp; MC"><span>DJ &amp; MC</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Lighting Effects"><span>Lighting Effects</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Photo Booth"><span>Photo Booth</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Photography"><span>Photography</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Cinematography"><span>Cinematography</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Full Package"><span>Full Package</span></label>
+            <label class="checkbox"><input type="checkbox" name="Services[]" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
         <div>
           <label for="cf-message">Tell us about your event</label>
           <textarea id="cf-message" name="Message" placeholder="Venue, guest count, vibe you're going for…"></textarea>
@@ -198,7 +197,7 @@
     </div>
   </section>
 
-  <section class="cta-strip">
+  <section class="cta-strip cta-strip--image" style="--cta-img:url('https://pub-5b7418a838064757932b3799e076431d.r2.dev/Frontpage/Ready%20to%20make%20it%20unforgettable%3F.webp');">
     <div class="container">
       <h2>Ready to make it unforgettable?</h2>
       <p>Tell us about your event and we'll put together a custom proposal.</p>
