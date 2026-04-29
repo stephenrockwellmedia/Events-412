@@ -21,4 +21,39 @@ document.addEventListener('DOMContentLoaded', () => {
       a.classList.add('active');
     }
   });
+
+  // AJAX submit for the contact form — show inline thank-you instead of redirect
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalLabel = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && (json.success === true || json.success === 'true')) {
+          form.innerHTML = `
+            <div class="form-success">
+              <div class="form-success-mark">✓</div>
+              <h3>Thank you!</h3>
+              <p>We got your message and will be in touch within 24 hours.</p>
+            </div>`;
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+          alert((json && json.message) || 'Something went wrong. Please try again or email 412events724@gmail.com.');
+        }
+      } catch (err) {
+        if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+        alert('Network error. Please try again or email 412events724@gmail.com.');
+      }
+    });
+  }
 });

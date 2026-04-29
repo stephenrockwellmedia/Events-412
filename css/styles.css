@@ -403,6 +403,32 @@ section { padding: 5rem 0; }
 }
 .contact-form textarea { min-height: 140px; resize: vertical; }
 .contact-form .submit-row { display: flex; justify-content: center; margin-top: .5rem; }
+.form-success {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.form-success-mark {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--grad);
+  color: #0b0a10;
+  font-size: 2rem;
+  display: grid; place-items: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 12px 32px rgba(212,175,55,.4);
+}
+.form-success h3 {
+  font-size: 2rem;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: .5rem;
+}
 .contact-form .checkbox-group { border: 0; padding: 0; margin: 0; }
 .contact-form .checkbox-group legend {
   display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .15em;
