@@ -252,6 +252,7 @@ section { padding: 5rem 0; }
 .hero-splash {
   padding: 10rem 0 9rem;
   background: #0b0a10;
+  isolation: isolate;
 }
 .hero-splash::before { display: none; }
 .hero-splash .hero-video {
@@ -260,7 +261,7 @@ section { padding: 5rem 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
 }
 .hero-splash::after {
@@ -268,8 +269,12 @@ section { padding: 5rem 0; }
   position: absolute;
   inset: 0;
   background: linear-gradient(rgba(7,6,10,.65), rgba(7,6,10,.85));
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
+}
+.hero-splash > .container {
+  position: relative;
+  z-index: 2;
 }
 .hero h1 { margin-bottom: 1rem; }
 .hero p.lede {
