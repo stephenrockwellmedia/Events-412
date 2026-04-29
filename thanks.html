@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found — Events 412 Pittsburgh</title>
+  <title>Thank You — Events 412 Pittsburgh</title>
+  <meta name="description" content="Thanks for reaching out — Events 412 will get back to you within 24 hours.">
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,38 +12,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .nf-wrap { text-align: center; padding: 4rem 0 2rem; }
-    .nf-code {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(7rem, 22vw, 14rem);
-      line-height: 1;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: .02em;
-      margin: 0;
+    .thanks-card {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow);
     }
-    .nf-actions {
+    .thanks-mark {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--grad);
+      display: grid; place-items: center;
+      margin: 0 auto 1.5rem;
+      color: #0b0a10;
+      font-size: 2.5rem;
+      box-shadow: 0 12px 32px rgba(212,175,55,.4);
+    }
+    .thanks-actions {
       display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
       margin-top: 2rem;
     }
-    .nf-links {
-      margin-top: 3rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: .75rem;
-      max-width: 720px;
-      margin-left: auto; margin-right: auto;
-    }
-    .nf-links a {
-      padding: .9rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      transition: border-color .15s ease, background .15s ease;
-    }
-    .nf-links a:hover { border-color: var(--neon-2); color: var(--neon-2); }
   </style>
 </head>
 <body>
@@ -71,24 +63,17 @@
 </header>
 
 <main>
-  <section>
-    <div class="container nf-wrap">
-      <p class="nf-code">404</p>
-      <span class="eyebrow">Off the Setlist</span>
-      <h1>This page got<br><span class="gradient-text">remixed away.</span></h1>
-      <p>The page you're looking for doesn't exist or was moved. Try one of these instead:</p>
-      <div class="nf-actions">
-        <a href="index.html" class="btn btn-primary">Back to Home</a>
-        <a href="index.html#contact" class="btn btn-ghost">Contact Us</a>
-      </div>
-      <div class="nf-links">
-        <a href="services/weddings.html">Weddings &amp; DJ</a>
-        <a href="services/lighting.html">Lighting Effects</a>
-        <a href="services/photo-booth.html">Photo Booth</a>
-        <a href="services/photography.html">Photography</a>
-        <a href="services/cinematography.html">Cinematography</a>
-        <a href="investments.html">Investments</a>
-        <a href="reviews.html">Reviews</a>
+  <section class="page-hero">
+    <div class="container">
+      <div class="thanks-card">
+        <div class="thanks-mark">✓</div>
+        <span class="eyebrow">Inquiry Received</span>
+        <h1>Thanks for<br><span class="gradient-text">reaching out.</span></h1>
+        <p>We'll review your details and get back to you within 24 hours with a custom quote and next steps. Keep an eye on your inbox — and check spam just in case.</p>
+        <div class="thanks-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="services/" class="btn btn-ghost">Explore Services</a>
+        </div>
       </div>
     </div>
   </section>
