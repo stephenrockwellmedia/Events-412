@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Trigger the animated-logo iframe only when scrolled into view
+  document.querySelectorAll('.feature-iframe iframe').forEach(iframe => {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const send = () => iframe.contentWindow && iframe.contentWindow.postMessage('play', '*');
+          if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') send();
+          else iframe.addEventListener('load', send, { once: true });
+          send();
+          obs.unobserve(iframe);
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(iframe);
+  });
+
   // AJAX submit for the contact form — show inline thank-you instead of redirect
   const form = document.querySelector('.contact-form');
   if (form) {
