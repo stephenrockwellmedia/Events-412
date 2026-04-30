@@ -335,6 +335,10 @@ section { padding: 5rem 0; }
 }
 @media (max-width: 520px) { .grid-4 { grid-template-columns: 1fr; } }
 
+.lighting-grid .card { min-height: 420px; display: flex; flex-direction: column; }
+.lighting-grid .card p { margin-top: auto; }
+@media (max-width: 820px) { .lighting-grid .card { min-height: 320px; } }
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
