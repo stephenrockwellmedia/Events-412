@@ -81,11 +81,15 @@ p  { margin: 0 0 1em; color: var(--text-dim); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(7,7,11,.85);
+  background: rgba(7,7,11,.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(212,175,55,.20);
   box-shadow: 0 4px 18px rgba(0,0,0,.45);
+}
+body.menu-open .site-header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 .site-header::after {
   content: '';
@@ -865,7 +869,8 @@ form textarea { min-height: 140px; resize: vertical; }
   .price-card { padding: 1.75rem 1.25rem; }
 
   .site-header .nav { padding: 0; }
-  .site-header .brand img { height: 70px !important; margin: -10px 0; }
+  .site-header .brand img { height: 95px !important; margin: -15px 0; }
+  .site-header .nav-toggle { margin-right: .5rem; }
 
   .footer-grid { gap: 2rem; }
   .site-footer { padding: 2.5rem 0 1.5rem; }
