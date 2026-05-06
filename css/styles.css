@@ -827,8 +827,17 @@ form textarea { min-height: 140px; resize: vertical; }
   }
   .nav-links.open { transform: translateX(0); }
   .nav-links a { padding: .75rem .25rem; }
-  /* Flatten the Services dropdown into the main mobile list */
-  .has-dropdown > a { display: none; }
+  /* Services becomes a non-collapsible section label with sub-items shown */
+  .has-dropdown > a {
+    pointer-events: none;
+    color: var(--neon-2);
+    font-size: .85rem !important;
+    letter-spacing: .22em !important;
+    padding: 1rem .25rem .35rem !important;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: .25rem;
+  }
+  .has-dropdown > a .caret { display: none; }
   .has-dropdown .dropdown,
   .has-dropdown:hover .dropdown,
   .has-dropdown:focus-within .dropdown {
@@ -839,10 +848,10 @@ form textarea { min-height: 140px; resize: vertical; }
     box-shadow: none;
     border: none;
     background: transparent;
-    padding: 0;
+    padding: 0 0 0 .75rem;
     min-width: 0;
   }
-  .has-dropdown .dropdown li a { padding: .75rem .25rem; font-size: 1rem; text-transform: uppercase; letter-spacing: .12em; font-family: 'Bebas Neue', sans-serif; }
+  .has-dropdown .dropdown li a { padding: .65rem .25rem; font-size: 1rem; text-transform: uppercase; letter-spacing: .12em; font-family: 'Bebas Neue', sans-serif; }
 }
 
 /* ============================================================
