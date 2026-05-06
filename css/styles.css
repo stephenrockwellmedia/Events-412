@@ -827,6 +827,8 @@ form textarea { min-height: 140px; resize: vertical; }
   }
   .nav-links.open { transform: translateX(0); }
   .nav-links a { padding: .75rem .25rem; }
+  /* Flatten the Services dropdown into the main mobile list */
+  .has-dropdown > a { display: none; }
   .has-dropdown .dropdown,
   .has-dropdown:hover .dropdown,
   .has-dropdown:focus-within .dropdown {
@@ -837,9 +839,10 @@ form textarea { min-height: 140px; resize: vertical; }
     box-shadow: none;
     border: none;
     background: transparent;
-    padding: 0 0 0 1rem;
+    padding: 0;
     min-width: 0;
   }
+  .has-dropdown .dropdown li a { padding: .75rem .25rem; font-size: 1rem; text-transform: uppercase; letter-spacing: .12em; font-family: 'Bebas Neue', sans-serif; }
 }
 
 /* ============================================================
