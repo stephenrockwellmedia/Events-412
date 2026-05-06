@@ -827,7 +827,9 @@ form textarea { min-height: 140px; resize: vertical; }
   }
   .nav-links.open { transform: translateX(0); }
   .nav-links a { padding: .75rem .25rem; }
-  .has-dropdown .dropdown {
+  .has-dropdown .dropdown,
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
     position: static;
     transform: none;
     opacity: 1;
@@ -869,7 +871,7 @@ form textarea { min-height: 140px; resize: vertical; }
   .price-card { padding: 1.75rem 1.25rem; }
 
   .site-header .nav { padding: 0; }
-  .site-header .brand img { height: 95px !important; margin: -15px 0; }
+  .site-header .brand img { height: 110px !important; margin: -10px 0; }
   .site-header .nav-toggle { margin-right: .5rem; }
 
   .footer-grid { gap: 2rem; }
