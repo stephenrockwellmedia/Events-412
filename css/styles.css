@@ -103,7 +103,7 @@ p  { margin: 0 0 1em; color: var(--text-dim); }
   justify-content: space-between;
   padding: 0;
 }
-.site-header .brand img { height: 110px !important; width: auto !important; margin: -25px 0; }
+.site-header .brand img { height: 95px !important; width: auto !important; margin: -20px 0; }
 
 .brand {
   display: flex;
