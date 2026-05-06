@@ -802,20 +802,26 @@ form textarea { min-height: 140px; resize: vertical; }
    ============================================================ */
 
 @media (max-width: 880px) {
-  .nav-toggle { display: grid; place-items: center; }
+  .nav-toggle { display: grid; place-items: center; position: relative; z-index: 60; }
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    left: auto;
+    width: min(82vw, 340px);
     flex-direction: column;
     background: var(--bg-card);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 1.25rem 1.5rem;
+    border-left: 1px solid var(--border);
+    box-shadow: -16px 0 40px rgba(0,0,0,.5);
+    padding: 5rem 1.5rem 2rem;
     gap: .25rem;
     align-items: stretch;
-    display: none;
+    display: flex;
+    transform: translateX(100%);
+    transition: transform .25s ease-out;
+    z-index: 55;
+    overflow-y: auto;
   }
-  .nav-links.open { display: flex; }
+  .nav-links.open { transform: translateX(0); }
   .nav-links a { padding: .75rem .25rem; }
   .has-dropdown .dropdown {
     position: static;

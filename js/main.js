@@ -7,9 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
+    const setIcon = open => { toggle.textContent = open ? '✕' : '☰'; };
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      setIcon(open);
+    });
+    // Close on link click or Escape
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      setIcon(false);
+    }));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        setIcon(false);
+      }
     });
   }
 
