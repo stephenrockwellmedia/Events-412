@@ -186,11 +186,12 @@ body.menu-open .site-header {
   background: none;
   border: 1px solid var(--border);
   color: var(--text);
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
 /* ============================================================
